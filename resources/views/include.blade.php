@@ -1,3 +1,6 @@
+In the file resources/views/include.blade.php, include another Blade file resources/views/includes/row.blade.php, passing the parameter correctly.
+
+Test method test_include_row()
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -21,6 +24,7 @@
                                 <tr class="bg-red-100">
                                     {{-- Task: include file resources/views/includes/row.blade.php --}}
                                     {{-- passing the $user variable to it --}}
+                                    @include('includes.row', ['user' => $user])
                                 </tr>
                             @endforeach
                         </tbody>
